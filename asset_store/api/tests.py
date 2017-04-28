@@ -18,7 +18,10 @@ class ApiViewsTest(TestCase):
         self.asset = Assets.objects.create(name=self.test_data["name"],
                 asset_type=self.test_data["asset_type"], 
                 asset_class=self.test_data["asset_class"])
-
+    def test_api_lists_all_assets(self):
+        response = self.client.get('/api/assets/')
+        self.assertEquals(len(json.loads(response.content)['results']), 1)
+         
     def test_api_allows_get_by_name_returns_and_correct_properties(self):
         response = self.client.get('/api/assets/' + self.test_data["name"] + '/')
         self.assertEquals(response.status_code, 200)
@@ -28,6 +31,15 @@ class ApiViewsTest(TestCase):
                 self.test_data['asset_type'] )
         self.assertEquals(json.loads(response.content)['asset_class'],
                 self.test_data['asset_class'] )
+
+    def test_api_allows_creation_of_assets(self):
+        new_asset = {"name": "Roxana",
+                "asset_type": "satellite",
+                "asset_class": "dove"}
+        post_response = self.client.post('/api/assets/',new_asset)
+        
+        self.assertEquals(post_response.status_code, 201)
+        
 
     def test_api_prevents_deletion_of_assets(self):
         
@@ -41,3 +53,4 @@ class ApiViewsTest(TestCase):
                 self.test_data['asset_type'] )
         self.assertEquals(json.loads(get_response.content)['asset_class'],
                 self.test_data['asset_class'] )
+

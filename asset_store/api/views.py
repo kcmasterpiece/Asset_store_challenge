@@ -4,6 +4,7 @@ from api.serializers import AssetSerializer
 
 
 class AssetViewSet(mixins.RetrieveModelMixin,
+                   mixins.ListModelMixin,
                    mixins.CreateModelMixin,
                    viewsets.GenericViewSet):
     """
