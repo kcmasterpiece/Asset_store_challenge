@@ -20,9 +20,9 @@ Here are instructions to run the application via manage.py:
 	`pip install -r requirements.txt`
 5. Makemigrations and migrate
 
-	`python asset_store/manage.py makemigrations api
+	`python asset_store/manage.py makemigrations api`
 	
-	python asset_store/manage.py migrate`
+	`python asset_store/manage.py migrate`
 6. Run the server
 
 	`python asset_store/manage.py runserver`
