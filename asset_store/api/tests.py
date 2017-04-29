@@ -149,22 +149,3 @@ class ApiViewsTest(TestCase):
                 post_response = self.client.post('/api/assets/', fail_asset)
                 self.assertEquals(post_response.status_code, 400)
 
-    # Not Implemented
-    # def test_api_allows_filtering(self):
-        # asset_types = [a['asset_type'] for a in AssetTypeClassRestrictions.objects.values('asset_type').distinct()]
-        # for t in asset_types:
-            # classes = [a['asset_class'] for a in AssetTypeClassRestrictions.objects.values('asset_class').filter(asset_type=t)]
-            # for c in classes:
-                # new_asset = {"name": "Roxana_"+t+c,
-                    # "asset_type": t,
-                    # "asset_class": c}
-                # post_response = self.client.post('/api/assets/',new_asset)
-                
-        # print(Assets.objects.all().values())
-        # response = self.client.get('/api/assets/?asset_type='+ asset_types[0])
-        # self.assertEquals(len(json.loads(response.content)['results']),len(Assets.objects.filter(asset_type=asset_types[0])))
-        
-        # asset_classes = [c['asset_class'] for c in Assets.objects.values('asset_class').distinct()]
-        # response = self.client.get('/api/assets/?asset_class='+ asset_classes[0])
-
-        # self.assertEquals(len(json.loads(response.content)['results']),len(Assets.objects.filter(asset_class=asset_classes[0])))

@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('api', '0001_assets_assettypeclassrestrictions'),
+        ('api', '0001_initial'),
     ]
 
     operations = [
