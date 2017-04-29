@@ -20,9 +20,7 @@ Here are instructions to run the application via manage.py:
 4. Install dependencies
 
 	`pip install -r requirements.txt`
-5. Makemigrations and migrate
-
-	`python asset_store/manage.py makemigrations api`
+5. Migrate the database
 	
 	`python asset_store/manage.py migrate`
 6. Run the server
