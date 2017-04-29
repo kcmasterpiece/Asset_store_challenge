@@ -30,7 +30,7 @@ class AssetSerializer(serializers.HyperlinkedModelSerializer):
 
     def create(self, validated_data):
         return Assets.objects.create(**validated_data)
-    
+
     url = serializers.HyperlinkedIdentityField(
         view_name='assets-detail',
         lookup_field='name'
