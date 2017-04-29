@@ -5,7 +5,7 @@ import re
 class AssetSerializer(serializers.HyperlinkedModelSerializer):
 
     def validate_name(self, value):
-        valid_chars = re.compile('^[^_\-][a-zA-Z0-9\-_]{3,63}$')
+        valid_chars = re.compile('^[a-zA-Z0-9][a-zA-Z0-9\-_]{3,63}$')
         if valid_chars.match(value) is None:
             raise serializers.ValidationError('This field may only contain alphanumeric characters, dashes, and underscores. It may not start with dashes or underscores and must be between 4 and 64 characters long')
         return value
