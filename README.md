@@ -9,6 +9,7 @@ Here are instructions to run the application via manage.py:
 1. Clone/copy the repo and cd into it
 
 	`git clone https://github.com/kcmasterpiece/Asset_store_challenge.git`
+	
 	`cd Asset_store_challenge (or whatever the top level directory you cloned to is called)`
 2. Create virtual environment 
 
